@@ -38,12 +38,15 @@
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.lstbxReservation = new System.Windows.Forms.ListBox();
+            this.lblSortBy = new System.Windows.Forms.Label();
+            this.btnBack = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // btnMngRsrvs
             // 
-            this.btnMngRsrvs.Location = new System.Drawing.Point(67, 172);
+            this.btnMngRsrvs.Location = new System.Drawing.Point(62, 193);
             this.btnMngRsrvs.Name = "btnMngRsrvs";
             this.btnMngRsrvs.Size = new System.Drawing.Size(429, 101);
             this.btnMngRsrvs.TabIndex = 1;
@@ -53,7 +56,7 @@
             // 
             // btnViewRsrvRprt
             // 
-            this.btnViewRsrvRprt.Location = new System.Drawing.Point(67, 279);
+            this.btnViewRsrvRprt.Location = new System.Drawing.Point(62, 300);
             this.btnViewRsrvRprt.Name = "btnViewRsrvRprt";
             this.btnViewRsrvRprt.Size = new System.Drawing.Size(429, 101);
             this.btnViewRsrvRprt.TabIndex = 3;
@@ -63,7 +66,7 @@
             // 
             // btnUpdtPrfl
             // 
-            this.btnUpdtPrfl.Location = new System.Drawing.Point(67, 386);
+            this.btnUpdtPrfl.Location = new System.Drawing.Point(62, 407);
             this.btnUpdtPrfl.Name = "btnUpdtPrfl";
             this.btnUpdtPrfl.Size = new System.Drawing.Size(429, 101);
             this.btnUpdtPrfl.TabIndex = 2;
@@ -73,7 +76,7 @@
             // 
             // btnMngMItms
             // 
-            this.btnMngMItms.Location = new System.Drawing.Point(67, 65);
+            this.btnMngMItms.Location = new System.Drawing.Point(62, 86);
             this.btnMngMItms.Name = "btnMngMItms";
             this.btnMngMItms.Size = new System.Drawing.Size(429, 101);
             this.btnMngMItms.TabIndex = 4;
@@ -83,7 +86,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(502, 65);
+            this.button1.Location = new System.Drawing.Point(497, 86);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(429, 101);
             this.button1.TabIndex = 5;
@@ -94,7 +97,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(502, 172);
+            this.button2.Location = new System.Drawing.Point(497, 193);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(429, 101);
             this.button2.TabIndex = 6;
@@ -104,7 +107,7 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(502, 279);
+            this.button3.Location = new System.Drawing.Point(497, 300);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(429, 101);
             this.button3.TabIndex = 7;
@@ -114,7 +117,7 @@
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(502, 386);
+            this.button4.Location = new System.Drawing.Point(497, 407);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(429, 101);
             this.button4.TabIndex = 8;
@@ -124,13 +127,44 @@
             // 
             // pictureBox1
             // 
+            this.pictureBox1.Enabled = false;
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(502, 65);
+            this.pictureBox1.Location = new System.Drawing.Point(497, 86);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(429, 422);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 9;
             this.pictureBox1.TabStop = false;
+            // 
+            // lstbxReservation
+            // 
+            this.lstbxReservation.FormattingEnabled = true;
+            this.lstbxReservation.Location = new System.Drawing.Point(497, 86);
+            this.lstbxReservation.Name = "lstbxReservation";
+            this.lstbxReservation.Size = new System.Drawing.Size(466, 420);
+            this.lstbxReservation.TabIndex = 10;
+            this.lstbxReservation.Visible = false;
+            // 
+            // lblSortBy
+            // 
+            this.lblSortBy.AutoSize = true;
+            this.lblSortBy.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSortBy.Location = new System.Drawing.Point(182, 114);
+            this.lblSortBy.Name = "lblSortBy";
+            this.lblSortBy.Size = new System.Drawing.Size(176, 55);
+            this.lblSortBy.TabIndex = 11;
+            this.lblSortBy.Text = "Sort by";
+            this.lblSortBy.Visible = false;
+            // 
+            // btnBack
+            // 
+            this.btnBack.Location = new System.Drawing.Point(211, 10);
+            this.btnBack.Name = "btnBack";
+            this.btnBack.Size = new System.Drawing.Size(571, 70);
+            this.btnBack.TabIndex = 12;
+            this.btnBack.Text = "Log out";
+            this.btnBack.UseVisualStyleBackColor = true;
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
             // Manager
             // 
@@ -138,20 +172,24 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.ClientSize = new System.Drawing.Size(1023, 579);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.btnBack);
+            this.Controls.Add(this.lstbxReservation);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btnMngMItms);
             this.Controls.Add(this.btnViewRsrvRprt);
             this.Controls.Add(this.btnUpdtPrfl);
             this.Controls.Add(this.btnMngRsrvs);
+            this.Controls.Add(this.lblSortBy);
             this.Name = "Manager";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -165,5 +203,8 @@
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.ListBox lstbxReservation;
+        private System.Windows.Forms.Label lblSortBy;
+        private System.Windows.Forms.Button btnBack;
     }
 }
