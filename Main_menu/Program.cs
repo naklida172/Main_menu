@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Main_menu.Chef;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -16,7 +17,7 @@ namespace Main_menu
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Manager());
+            Application.Run(new MainMenu());
         }
     }
 }

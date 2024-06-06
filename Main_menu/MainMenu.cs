@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Main_menu.Chef;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -65,25 +66,47 @@ namespace Main_menu
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            try
-            {
-                for (int i = 0; i < Users.Count; i++)
-                {
-                    if (Users[i].Check_login(txtbxLogin.Text))
-                    {
-                        if (Users[i].Check_password(txtbxPassword.Text))
-                        {
-                            Manager obj1 = new Manager();
-                            obj1.ShowDialog();
-                        }
-                        else
-                        {
-                            lblTest.Text = "Wrong password";
-                        }
-                    }
-                }
+            GlobalItems.CurrentAccount = "Colin";
 
-            } catch { lblTest.Text = "Error"; }
+            frmChefMenu frm = new frmChefMenu();
+
+            frm.ShowDialog();
+            //try
+            //{
+            //    for (int i = 0; i < Users.Count; i++)
+            //    {
+            //        if (Users[i].Check_login(txtbxLogin.Text))
+            //        {
+            //            if (Users[i].Check_password(txtbxPassword.Text))
+            //            {
+            //                Manager obj1 = new Manager();
+            //                obj1.ShowDialog();
+            //            }
+            //            else
+            //            {
+            //                lblTest.Text = "Wrong password";
+            //            }
+            //        }
+            //    }
+
+            //} catch { lblTest.Text = "Error"; }
+
+            //if (txtbxLogin.Text== "Colin" && txtbxPassword.Text== "888888")
+            //{
+            //    GlobalItems.CurrentAccount = txtbxLogin.Text.Trim();
+
+            //    frmChefMenu frm = new frmChefMenu();
+            //    frm.ShowDialog();
+            //}
+
+            //if (txtbxLogin.Text == "John" && txtbxPassword.Text == "11111111")
+            //{
+            //    GlobalItems.CurrentAccount = txtbxLogin.Text.Trim();
+            //    frmChefMenu frm = new frmChefMenu();
+            //    frm.ShowDialog();
+            //}
+
+            //MessageBox.Show("Username or Password wrong.");
         }
 
         private void btnRegister_Click(object sender, EventArgs e)
@@ -92,6 +115,11 @@ namespace Main_menu
         }
 
         private void lblTest_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
         {
 
         }

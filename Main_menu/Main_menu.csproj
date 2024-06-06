@@ -50,6 +50,9 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Data.SqlClient, Version=4.6.1.6, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Data.SqlClient.4.8.6\lib\net461\System.Data.SqlClient.dll</HintPath>
+    </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -61,6 +64,43 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Chef\frmAddIngredient.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Chef\frmAddIngredient.Designer.cs">
+      <DependentUpon>frmAddIngredient.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Chef\frmEditIngredient.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Chef\frmEditIngredient.Designer.cs">
+      <DependentUpon>frmEditIngredient.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Chef\frmUpdate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Chef\frmUpdate.Designer.cs">
+      <DependentUpon>frmUpdate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Chef\frmChefMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Chef\frmChefMenu.Designer.cs">
+      <DependentUpon>frmChefMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Chef\frmViewOrders.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Chef\frmViewOrders.Designer.cs">
+      <DependentUpon>frmViewOrders.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Chef\frmManageInventory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Chef\frmManageInventory.Designer.cs">
+      <DependentUpon>frmManageInventory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GlobalItems.cs" />
     <Compile Include="Manager.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -75,6 +115,24 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Chef\frmAddIngredient.resx">
+      <DependentUpon>frmAddIngredient.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Chef\frmChefMenu.resx">
+      <DependentUpon>frmChefMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Chef\frmEditIngredient.resx">
+      <DependentUpon>frmEditIngredient.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Chef\frmViewOrders.resx">
+      <DependentUpon>frmViewOrders.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Chef\frmManageInventory.resx">
+      <DependentUpon>frmManageInventory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Chef\frmUpdate.resx">
+      <DependentUpon>frmUpdate.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Manager.resx">
       <DependentUpon>Manager.cs</DependentUpon>
     </EmbeddedResource>
@@ -89,7 +147,9 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -104,13 +164,8 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Database1.mdf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Database1_log.ldf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      <DependentUpon>Database1.mdf</DependentUpon>
-    </Content>
+    <None Include="Resources\ChefProfile.png" />
+    <EmbeddedResource Include="Chef\Image\ChefProfile.png" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
