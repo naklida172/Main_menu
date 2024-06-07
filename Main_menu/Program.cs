@@ -16,7 +16,7 @@ namespace Main_menu
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Manager());
+            Application.Run(new MainMenu());
         }
     }
 }

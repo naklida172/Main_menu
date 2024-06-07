@@ -95,5 +95,12 @@ namespace Main_menu
         {
 
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            AdminView form1 = new AdminView();
+
+            form1.ShowDialog();
+        }
     }
 }
