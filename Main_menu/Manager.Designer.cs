@@ -38,7 +38,6 @@
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.lstbxReservation = new System.Windows.Forms.ListBox();
             this.lblSortBy = new System.Windows.Forms.Label();
             this.btnBack = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -104,6 +103,7 @@
             this.button2.Text = "button2";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Visible = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button3
             // 
@@ -114,6 +114,7 @@
             this.button3.Text = "button3";
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Visible = false;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // button4
             // 
@@ -124,6 +125,7 @@
             this.button4.Text = "button4";
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Visible = false;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // pictureBox1
             // 
@@ -135,15 +137,6 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 9;
             this.pictureBox1.TabStop = false;
-            // 
-            // lstbxReservation
-            // 
-            this.lstbxReservation.FormattingEnabled = true;
-            this.lstbxReservation.Location = new System.Drawing.Point(497, 86);
-            this.lstbxReservation.Name = "lstbxReservation";
-            this.lstbxReservation.Size = new System.Drawing.Size(466, 420);
-            this.lstbxReservation.TabIndex = 10;
-            this.lstbxReservation.Visible = false;
             // 
             // lblSortBy
             // 
@@ -173,7 +166,6 @@
             this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.ClientSize = new System.Drawing.Size(1023, 579);
             this.Controls.Add(this.btnBack);
-            this.Controls.Add(this.lstbxReservation);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
@@ -203,7 +195,6 @@
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.ListBox lstbxReservation;
         private System.Windows.Forms.Label lblSortBy;
         private System.Windows.Forms.Button btnBack;
     }

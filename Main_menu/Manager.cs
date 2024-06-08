@@ -7,16 +7,18 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace Main_menu
 {
     public partial class Manager : Form
     {
-        string current_mode = "main";
-
+        public string current_mode = "Main";
+        static public bool Delete_item = false;
 
         public void Management_mode()
         {
+            btnBack.Text = "Go back";
             button1.Text = "Add";
             button2.Text = "Edit";
             button3.Text = "Delete";
@@ -33,59 +35,17 @@ namespace Main_menu
         {
             pictureBox1.Visible = false;
             lblSortBy.Visible = true;
-            lstbxReservation.Visible = true;
-            button2.Text = "Month";
-            button3.Text = "Customer";
-            button4.Text = "Type";
+            btnMngMItms.Visible = false;
+            btnMngRsrvs.Text = "Month";
+            btnViewRsrvRprt.Text = "Customer";
+            btnUpdtPrfl.Text = "Type";
             current_mode = "View";
         }
         public void Profile_mode()
         {
             button1.Text = "Change name";
-            button1.Text = "Change password";
-            button1.Text = "Change email";
-        }
-        class Menu_item
-        {
-            protected string name;
-            protected string category;
-            protected string description;
-            protected int price;
-        }
-
-        class Food_item : Menu_item
-        {
-            private string callories;
-            private string ingredients;
-            public Food_item(string name, string category, string description, int price,string callories, string ingredients)
-            {
-                this.name = name;
-                this.category = category;
-                this.description = description;
-                this.price = price;
-                this.callories = callories;
-                this.ingredients = ingredients;
-            }
-            public void Change_price(int price)
-            { this.price = price; }
-        }
-        class Reservation
-        {
-            private string date;
-            private string customer_email;
-            private string customer_name;
-            private string type;
-            public Reservation(string date, string customer_email, string customer_name, string type)
-            {
-                this.date = date;
-                this.customer_email = customer_email;
-                this.customer_name = customer_name;
-                this.type = type;
-            }
-            public string Display()
-            {
-                return $"{date}, {customer_name}, {type}";
-            }
+            button2.Text = "Change password";
+            button3.Text = "Change email";
         }
         public Manager()
         {
@@ -100,42 +60,83 @@ namespace Main_menu
 
         private void btnMngMItms_Click(object sender, EventArgs e)
         {
-            Management_mode();
-            current_mode = "Items";
+            if (current_mode == "Main")
+            {
+                Management_mode();
+                current_mode = "Items";
+            }
+            else if (current_mode == "View")
+            {
+
+            }
         }
 
         private void btnMngRsrvs_Click(object sender, EventArgs e)
         {
-            Management_mode();
-            current_mode = "Reservations";
+            if (current_mode == "Main")
+            {
+                Management_mode();
+                current_mode = "Reservations";
+            }
+            else if (current_mode == "View")
+            {
+
+            }
         }
 
         private void btnViewRsrvRprt_Click(object sender, EventArgs e)
         {
-            Reservation_view();
+            if (current_mode == "Main")
+            {
+                Reservation_view();
+            }
+            else if (current_mode == "View")
+            {
+
+            }
         }
 
         private void btnUpdtPrfl_Click(object sender, EventArgs e)
         {
-            
+            if (current_mode == "Main")
+            {
+                Profile_settings obj1 = new Profile_settings();
+                obj1.ShowDialog();
+            }
+            else if (current_mode == "View")
+            {
+
+            }
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (current_mode == "main")
-            { }
-            else if(current_mode == "Items")
-            { }
+            //add button
+            if(current_mode == "Items")
+            {
+                Add_item obj1 = new Add_item();
+                obj1.ShowDialog();
+            }
             else if (current_mode == "Reservations")
-            { }
+            {
+                Add_reservation obj1 = new Add_reservation();
+                obj1.ShowDialog();
+            }
         }
 
         private void btnBack_Click(object sender, EventArgs e)
         {
-            if (current_mode =="main")
-            { }
+            if (current_mode =="Main")
+            {
+                MainMenu.current_user = null;
+                this.Hide();
+                MainMenu obj1 = new MainMenu();
+                obj1.ShowDialog();
+              
+            }
             else 
             {
+                btnBack.Text = "Logout";
                 btnMngMItms.Visible = true;
                 btnMngRsrvs.Visible = true;
                 btnViewRsrvRprt.Visible = true;
@@ -144,11 +145,47 @@ namespace Main_menu
                 button2.Visible = false;
                 button3.Visible = false;
                 button4.Visible = false;
+                btnMngMItms.Text = "Manage menu items";
+                btnMngRsrvs.Text = "Manage reservations";
+                btnViewRsrvRprt.Text = "View reservation report";
+                btnUpdtPrfl.Text = "Update profile";
                 pictureBox1.Visible = true;
                 lblSortBy.Visible = false;
-                lstbxReservation.Visible = false;
-                current_mode = "main";
+                current_mode = "Main";
             }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            if (current_mode == "Items")
+            {
+                Edit_items obj1 = new Edit_items();
+                obj1.ShowDialog();
+            }
+            else if (current_mode == "Reservations")
+            {
+                Add_reservation obj1 = new Add_reservation();
+                obj1.ShowDialog();
+            }
+        }
+        private void button3_Click(object sender, EventArgs e)
+        {
+            if (current_mode == "Items")
+            {
+                Delete_item = true;
+                Edit_items obj1 = new Edit_items();
+                obj1.ShowDialog();
+            }
+            else if (current_mode == "Reservations")
+            {
+                Add_reservation obj1 = new Add_reservation();
+                obj1.ShowDialog();
+            }
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
