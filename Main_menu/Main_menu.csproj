@@ -74,12 +74,6 @@
     <Compile Include="ManagerSpecific\Add_reservation.Designer.cs">
       <DependentUpon>Add_reservation.cs</DependentUpon>
     </Compile>
-    <Compile Include="AdminView.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="AdminView.Designer.cs">
-      <DependentUpon>AdminView.cs</DependentUpon>
-    </Compile>
     <Compile Include="Customer_registration.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -120,9 +114,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ManagerSpecific\Add_reservation.resx">
       <DependentUpon>Add_reservation.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="AdminView.resx">
-      <DependentUpon>AdminView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Customer_registration.resx">
       <DependentUpon>Customer_registration.cs</DependentUpon>
