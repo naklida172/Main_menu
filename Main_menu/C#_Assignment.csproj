@@ -4,15 +4,14 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{78F5AA60-2B27-4B6F-9A01-17424F11C0D4}</ProjectGuid>
+    <ProjectGuid>{ACEF07C2-B403-41D3-8313-D9C31BED3ADF}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>Main_menu</RootNamespace>
-    <AssemblyName>Main_menu</AssemblyName>
-    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <RootNamespace>C__Assignment</RootNamespace>
+    <AssemblyName>C#_Assignment</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
-    <IsWebBootstrapper>false</IsWebBootstrapper>
     <PublishUrl>publish\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
@@ -25,6 +24,7 @@
     <MapFileExtensions>true</MapFileExtensions>
     <ApplicationRevision>0</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
@@ -65,135 +65,117 @@
     <Compile Include="AddReservation.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AddReservation.Designer.cs" />
-    <Compile Include="Cart.cs">
-      <SubType>Form</SubType>
+    <Compile Include="AddReservation.Designer.cs">
+      <DependentUpon>AddReservation.cs</DependentUpon>
     </Compile>
-    <Compile Include="Cart.Designer.cs" />
-    <Compile Include="DeleteOrder.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="DeleteOrder.Designer.cs" />
-    <Compile Include="EditOrder.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="EditOrder.Designer.cs" />
-    <Compile Include="Feedback.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Feedback.Designer.cs" />
     <Compile Include="Feedbacks.cs" />
-    <Compile Include="HomePage.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="HomePage.Designer.cs" />
-    <Compile Include="ManageOrder.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ManageOrder.Designer.cs" />
-    <Compile Include="ManageReservation.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ManageReservation.Designer.cs" />
-    <Compile Include="ManagerSpecific\Add_item.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ManagerSpecific\Add_item.Designer.cs">
-      <DependentUpon>Add_item.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ManagerSpecific\Add_reservation.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ManagerSpecific\Add_reservation.Designer.cs">
-      <DependentUpon>Add_reservation.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Customer_registration.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Customer_registration.Designer.cs">
-      <DependentUpon>Customer_registration.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ManagerSpecific\Edit_items.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ManagerSpecific\Edit_items.Designer.cs">
-      <DependentUpon>Edit_items.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ManagerSpecific\Manager.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ManagerSpecific\Manager.Designer.cs">
-      <DependentUpon>Manager.cs</DependentUpon>
-    </Compile>
-    <Compile Include="MainMenu.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="MainMenu.Designer.cs">
-      <DependentUpon>MainMenu.cs</DependentUpon>
-    </Compile>
-    <Compile Include="General\Menu_item.cs" />
-    <Compile Include="General\Profile_settings.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="General\Profile_settings.Designer.cs">
-      <DependentUpon>Profile_settings.cs</DependentUpon>
-    </Compile>
-    <Compile Include="General\Program.cs" />
-    <Compile Include="Menu.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Menu.Designer.cs" />
-    <Compile Include="Order.cs" />
-    <Compile Include="OrderStatus.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="OrderStatus.Designer.cs" />
-    <Compile Include="Payment.cs" />
-    <Compile Include="PaymentWindow.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="PaymentWindow.Designer.cs" />
-    <Compile Include="Program.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="General\Reservation.cs" />
-    <Compile Include="General\User.cs" />
-    <Compile Include="Reservation.cs" />
     <Compile Include="ReservationStatus.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ReservationStatus.Designer.cs" />
-    <EmbeddedResource Include="AddReservation.resx" />
-    <EmbeddedResource Include="Cart.resx" />
-    <EmbeddedResource Include="DeleteOrder.resx" />
-    <EmbeddedResource Include="EditOrder.resx" />
-    <EmbeddedResource Include="Feedback.resx" />
-    <EmbeddedResource Include="HomePage.resx" />
-    <EmbeddedResource Include="ManageOrder.resx" />
-    <EmbeddedResource Include="ManageReservation.resx" />
-    <EmbeddedResource Include="ManagerSpecific\Add_item.resx">
-      <DependentUpon>Add_item.cs</DependentUpon>
+    <Compile Include="ReservationStatus.Designer.cs">
+      <DependentUpon>ReservationStatus.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OrderStatus.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OrderStatus.Designer.cs">
+      <DependentUpon>OrderStatus.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Payment.cs" />
+    <Compile Include="DeleteOrder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DeleteOrder.Designer.cs">
+      <DependentUpon>DeleteOrder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EditOrder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditOrder.Designer.cs">
+      <DependentUpon>EditOrder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Menu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Menu.Designer.cs">
+      <DependentUpon>Menu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HomePage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HomePage.Designer.cs">
+      <DependentUpon>HomePage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Feedback.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Feedback.Designer.cs">
+      <DependentUpon>Feedback.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Order.cs" />
+    <Compile Include="ManageOrder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ManageOrder.Designer.cs">
+      <DependentUpon>ManageOrder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Cart.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Cart.Designer.cs">
+      <DependentUpon>Cart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reservation.cs" />
+    <Compile Include="ManageReservation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ManageReservation.Designer.cs">
+      <DependentUpon>ManageReservation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PaymentWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PaymentWindow.Designer.cs">
+      <DependentUpon>PaymentWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="AddReservation.resx">
+      <DependentUpon>AddReservation.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ManagerSpecific\Add_reservation.resx">
-      <DependentUpon>Add_reservation.cs</DependentUpon>
+    <EmbeddedResource Include="DeleteOrder.resx">
+      <DependentUpon>DeleteOrder.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Customer_registration.resx">
-      <DependentUpon>Customer_registration.cs</DependentUpon>
+    <EmbeddedResource Include="EditOrder.resx">
+      <DependentUpon>EditOrder.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ManagerSpecific\Edit_items.resx">
-      <DependentUpon>Edit_items.cs</DependentUpon>
+    <EmbeddedResource Include="ReservationStatus.resx">
+      <DependentUpon>ReservationStatus.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ManagerSpecific\Manager.resx">
-      <DependentUpon>Manager.cs</DependentUpon>
+    <EmbeddedResource Include="Menu.resx">
+      <DependentUpon>Menu.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MainMenu.resx">
-      <DependentUpon>MainMenu.cs</DependentUpon>
+    <EmbeddedResource Include="HomePage.resx">
+      <DependentUpon>HomePage.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="General\Profile_settings.resx">
-      <DependentUpon>Profile_settings.cs</DependentUpon>
+    <EmbeddedResource Include="Feedback.resx">
+      <DependentUpon>Feedback.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Menu.resx" />
-    <EmbeddedResource Include="OrderStatus.resx" />
-    <EmbeddedResource Include="PaymentWindow.resx" />
+    <EmbeddedResource Include="ManageOrder.resx">
+      <DependentUpon>ManageOrder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Cart.resx">
+      <DependentUpon>Cart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OrderStatus.resx">
+      <DependentUpon>OrderStatus.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ManageReservation.resx">
+      <DependentUpon>ManageReservation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PaymentWindow.resx">
+      <DependentUpon>PaymentWindow.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -202,9 +184,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="ReservationStatus.resx" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -219,9 +199,9 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
+    <BootstrapperPackage Include=".NETFramework,Version=v4.8">
       <Visible>False</Visible>
-      <ProductName>Microsoft .NET Framework 4.7.2 %28x86 and x64%29</ProductName>
+      <ProductName>Microsoft .NET Framework 4.8 %28x86 and x64%29</ProductName>
       <Install>true</Install>
     </BootstrapperPackage>
     <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
@@ -231,17 +211,13 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\LOGO.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Database1.mdf">
+    <Content Include="Assignment.mdf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Database1_log.ldf">
+    <Content Include="Assignment_log.ldf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      <DependentUpon>Database1.mdf</DependentUpon>
+      <DependentUpon>Assignment.mdf</DependentUpon>
     </Content>
   </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

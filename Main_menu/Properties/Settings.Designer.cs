@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Main_menu.Properties
+namespace C__Assignment.Properties
 {
 
 
