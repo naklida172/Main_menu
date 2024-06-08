@@ -54,41 +54,61 @@ namespace Main_menu
                 return got_user;
             }
         }
-            static public void Register(string id, string name, string username, string password, string role, string phone, string address)
+        static public void Register(string id, string name, string username, string password, string role, string phone, string address)
+        {
+            using (SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["MyCS"].ToString()))
             {
-                using (SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["MyCS"].ToString()))
+                conn.Open();
+                using (SqlCommand cmd = new SqlCommand("INSERT INTO [tblUser]([ID],[Realname],[Account],[Password],[Role],[Phone],[Address]) VALUES " +
+                    "(@i,@n,@u,@p,@r,@q,@a)", conn))
+                {
+                    cmd.Parameters.AddWithValue("@i", id);
+                    cmd.Parameters.AddWithValue("@n", name);
+                    cmd.Parameters.AddWithValue("@u", username);
+                    cmd.Parameters.AddWithValue("@p", password);
+                    cmd.Parameters.AddWithValue("@r", role);
+                    cmd.Parameters.AddWithValue("@q", phone);
+                    cmd.Parameters.AddWithValue("@a", address);
+                    cmd.ExecuteNonQuery();
+                }
+            }
+        }
+        public string Change(string password, string new_value, string row_name)
+        {
+            if (this.password == password)
+            {
+            using (SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["MyCS"].ToString()))
                 {
                     conn.Open();
-                    using (SqlCommand cmd = new SqlCommand("INSERT INTO [tblUser]([ID],[Realname],[Account],[Password],[Role],[Phone],[Address]) VALUES " +
-                        "(@i,@n,@u,@p,@r,@q,@a)", conn))
-                    {
-                        cmd.Parameters.AddWithValue("@i", id);
-                        cmd.Parameters.AddWithValue("@n", name);
-                        cmd.Parameters.AddWithValue("@u", username);
-                        cmd.Parameters.AddWithValue("@p", password);
-                        cmd.Parameters.AddWithValue("@r", role);
-                        cmd.Parameters.AddWithValue("@q", phone);
-                        cmd.Parameters.AddWithValue("@a", address);
-                        cmd.ExecuteNonQuery();
-                    }
+                    SqlCommand cmd = new SqlCommand("UPDATE [tblUser] SET "+ row_name+" = @n where [ID]=@i", conn);
+                    cmd.Parameters.AddWithValue("@n", new_value);
+                    cmd.Parameters.AddWithValue("@i", this.id);
+                    cmd.ExecuteNonQuery();
+                return "Success";
                 }
             }
-            public string Change(string password, string new_value, string row_name)
+            else
+                return "Error";
+        }
+        static public List<string> Get_IdName()
+        {
+            using (SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["MyCS"].ToString()))
             {
-                if (this.password == password)
+                List<string> Items_List = new List<string>();
+                conn.Open();
+                string command = "Select count(ID) from [tblUser]";
+                SqlCommand cmd = new SqlCommand(command, conn);
+                int IdAmount = Convert.ToInt32(cmd.ExecuteScalar());
+                for (int i = 1; i < IdAmount + 1; i++)
                 {
-                using (SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["MyCS"].ToString()))
-                    {
-                        conn.Open();
-                        SqlCommand cmd = new SqlCommand("UPDATE [tblUser] SET "+ row_name+" = @n where [ID]=@i", conn);
-                        cmd.Parameters.AddWithValue("@n", new_value);
-                        cmd.Parameters.AddWithValue("@i", this.id);
-                        cmd.ExecuteNonQuery();
-                    return "Success";
-                    }
+                    command = ("select Max([ID]) from [tblUser] where [ID] in (Select top " + i.ToString() + " [ID] from [tblUser]);").ToString();
+                    SqlCommand cmd1 = new SqlCommand(command, conn);
+                    command = ("select [Account] from [tblUser] where [ID] = (select Max([ID]) from [tblUser] where [ID] in (Select top " + i.ToString() + " [ID] from [tblUser]))");
+                    SqlCommand cmd2 = new SqlCommand(command, conn);
+                    Items_List.Add(Convert.ToString(cmd1.ExecuteScalar()) + ", " + Convert.ToString(cmd2.ExecuteScalar()));
                 }
-                else
-                    return "Error";
+                return Items_List;
             }
+        }
     }
 }

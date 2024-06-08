@@ -8,29 +8,26 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Main_menu
+namespace Main_menu.ManagerSpecific
 {
-    public partial class Edit_items : Form
+    public partial class Edit_reservation : Form
     {
-        static public int Edit = 0;
-        public Edit_items()
+        static public string Edit = "";
+        public Edit_reservation()
         {
             InitializeComponent();
-        }
-
-        private void Form1_Load(object sender, EventArgs e)
-        {
-            lstbxItems.DataSource = Food_item.Get_IdName();
-        }
-
-        private void lstbxItems_SelectedIndexChanged(object sender, EventArgs e)
-        {
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
             Close();
         }
+
+        private void Edit_reservation_Load(object sender, EventArgs e)
+        {
+            lstbxItems.DataSource= Reservation_manager.Get_IdName();
+        }
+
         public bool Check_list()
         {
             for (int i = 0; i < lstbxItems.Items.Count; i++)
@@ -44,34 +41,24 @@ namespace Main_menu
         }
         private void btnConfirm_Click(object sender, EventArgs e)
         {
-            if (!Check_list()) 
+            if (!Check_list())
             {
                 lblSelect.Text = "No such id found";
             }
-            else if(Manager.Delete_item == false)
+            else if (Manager.Delete_reservation == false)
             {
                 this.Hide();
-                Edit = int.Parse(txtbxID.Text);
-                Add_item obj1 = new Add_item();
+                Edit = txtbxID.Text;
+                Add_reservation obj1 = new Add_reservation();
                 obj1.ShowDialog();
                 Close();
             }
             else
             {
-                Edit = int.Parse(txtbxID.Text);
-                Menu_item.Delete_item(Edit);
-                Edit = 0;
-                lstbxItems.DataSource = Food_item.Get_IdName();
             }
-
         }
 
-        private void lblSelect_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtbxID_TextChanged(object sender, EventArgs e)
+        private void lstbxItems_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }

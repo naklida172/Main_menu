@@ -54,6 +54,7 @@
             this.txtbxID.Name = "txtbxID";
             this.txtbxID.Size = new System.Drawing.Size(131, 47);
             this.txtbxID.TabIndex = 1;
+            this.txtbxID.TextChanged += new System.EventHandler(this.txtbxID_TextChanged);
             // 
             // btnConfirm
             // 
@@ -84,6 +85,7 @@
             this.lblSelect.Size = new System.Drawing.Size(191, 33);
             this.lblSelect.TabIndex = 4;
             this.lblSelect.Text = "Select item id";
+            this.lblSelect.Click += new System.EventHandler(this.lblSelect_Click);
             // 
             // Edit_items
             // 

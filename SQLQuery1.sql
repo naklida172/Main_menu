@@ -1,6 +1,6 @@
 ﻿Create table [tblUser]
 (
-    [ID] [varchar](50) NOT NULL,
+    [ID] [varchar](50) NOT NULL Primary key,
 	[Account] [varchar](50) NOT NULL,
 	[Password] [varchar](50) NOT NULL,
 	[Realname] [varchar](50) NOT NULL,
@@ -41,3 +41,23 @@ VALUES
     (103, 'Caesar Salad', 6.99, 'Classic Caesar salad with romaine lettuce and croutons', 'Salads', 350, 'Romaine lettuce, croutons, Caesar dressing, Parmesan cheese')
 ;
 Select Ingridients from Menu_item where ItemID = 203;
+
+CREATE TABLE [Reservation] (
+    [reservationId]     INT          IDENTITY (1, 1) NOT NULL,
+    [customerID]        [varchar](50)          NOT NULL,
+    [reservationTypeID] INT          NOT NULL,
+    [date]              VARCHAR (50) NOT NULL,
+    [reservationStatus] VARCHAR (50) NOT NULL,
+    PRIMARY KEY CLUSTERED ([reservationId] ASC),
+    FOREIGN KEY ([reservationTypeID]) REFERENCES [dbo].[ReservationType] ([reservationTypeID]),
+    FOREIGN KEY ([customerID]) REFERENCES [tblUser] ([ID])
+);
+
+CREATE TABLE [ReservationType] (
+    [reservationTypeID]   INT          IDENTITY (1, 1) NOT NULL,
+    [reservationTypeName] VARCHAR (50) NOT NULL,
+    PRIMARY KEY CLUSTERED ([reservationTypeID] ASC)
+);
+
+Insert into [ReservationType]([reservationTypeName]) Values ('type 2');
+Select * from [ReservationType];

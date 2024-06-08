@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using Main_menu.ManagerSpecific;
 
 namespace Main_menu
 {
@@ -15,6 +16,7 @@ namespace Main_menu
     {
         public string current_mode = "Main";
         static public bool Delete_item = false;
+        static public bool Delete_reservation = false;
 
         public void Management_mode()
         {
@@ -164,7 +166,7 @@ namespace Main_menu
             }
             else if (current_mode == "Reservations")
             {
-                Add_reservation obj1 = new Add_reservation();
+                Edit_reservation obj1 = new Edit_reservation();
                 obj1.ShowDialog();
             }
         }

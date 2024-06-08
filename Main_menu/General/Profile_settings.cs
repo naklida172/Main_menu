@@ -73,7 +73,7 @@ namespace Main_menu
         private void btnChangeUsername_Click(object sender, EventArgs e)
         {
             AllButtons(false);
-            current_item = "[Username]";
+            current_item = "[Account]";
         }
 
         private void btnSave_Click(object sender, EventArgs e)

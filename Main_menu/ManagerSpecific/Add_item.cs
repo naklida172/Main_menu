@@ -45,14 +45,14 @@ namespace Main_menu
             {
                 if(cbxIfFood.Enabled == true && cbxIfFood.Checked && txtbxCallories.Text=="" && txtbxIngredients.Text=="")
                 {
-                    Console.WriteLine("aaaaaaaaaaaa");
+                    //Console.WriteLine("aaaaaaaaaaaa");
                     return false;
                 }
                 return true;
             }
             else
             {
-                Console.WriteLine("AAAAAAAAAAAAAAAAAAAAAAA");
+                //Console.WriteLine("AAAAAAAAAAAAAAAAAAAAAAA");
                 return false;
             }
         }
@@ -87,7 +87,7 @@ namespace Main_menu
                 else
                 {
 
-                    lblTest.Text = CheckAllFields().ToString();
+                    lblTest.Text = "Error";
                 }
             }
             else
