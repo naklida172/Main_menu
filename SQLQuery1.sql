@@ -1,17 +1,17 @@
-﻿Create table [User]
-([UserID] nvarchar(50) NOT NULL PRIMARY KEY,
-[Name] nvarchar(50),
-[Username] nvarchar(20),
-[Password] nvarchar(20),
-[Role] nvarchar(10),
-[Email] nvarchar(50),
-[Phone] nvarchar(20),
-[Address] nvarchar(100)
+﻿Create table [tblUser]
+(
+    [ID] [varchar](50) NOT NULL,
+	[Account] [varchar](50) NOT NULL,
+	[Password] [varchar](50) NOT NULL,
+	[Realname] [varchar](50) NOT NULL,
+	[Address] [varchar](50) NULL,
+	[Phone] [varchar](50) NULL,
+	[Role] [varchar](50) NULL
 );
 
---Drop table [User];
+--Drop table [tblUser];
 
-INSERT INTO [User] VALUES 
+INSERT INTO [tblUser] VALUES 
 ('UN00','Test','Login','Password','manger', 'testE','testP','testA'),
 ('UN01', 'John Doe', 'john_admin', 'admin123', 'admin', 'john.doe@example.com', '+1 123-456-7890', '123 Main St, Anytown, USA'),
 ('UN02','Jane Smith', 'janemanag', 'manager456', 'manager', 'jane.smith@example.com', '+1 987-654-3210', '456 Elm Ave, Cityville, USA'),

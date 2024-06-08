@@ -31,14 +31,12 @@
             this.txtbxUsername = new System.Windows.Forms.TextBox();
             this.txtbxPassword = new System.Windows.Forms.TextBox();
             this.txtbxPhone = new System.Windows.Forms.TextBox();
-            this.txtbxEmail = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.txtbxName = new System.Windows.Forms.TextBox();
-            this.txtbxAddress = new System.Windows.Forms.TextBox();
+            this.txtbxEmail = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.btnSave = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
@@ -70,14 +68,6 @@
             this.txtbxPhone.Size = new System.Drawing.Size(210, 44);
             this.txtbxPhone.TabIndex = 3;
             // 
-            // txtbxEmail
-            // 
-            this.txtbxEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtbxEmail.Location = new System.Drawing.Point(7, 204);
-            this.txtbxEmail.Name = "txtbxEmail";
-            this.txtbxEmail.Size = new System.Drawing.Size(210, 44);
-            this.txtbxEmail.TabIndex = 2;
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -97,33 +87,24 @@
             this.label2.TabIndex = 5;
             this.label2.Text = "Create the password";
             // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(259, 225);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(82, 13);
-            this.label3.TabIndex = 6;
-            this.label3.Text = "Write your email";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
-            // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(259, 315);
+            this.label4.Location = new System.Drawing.Point(228, 315);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(123, 13);
+            this.label4.Size = new System.Drawing.Size(183, 13);
             this.label4.TabIndex = 7;
-            this.label4.Text = "Write you phone number";
+            this.label4.Text = "Write you phone number(OPTIONAL)";
+            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(594, 56);
+            this.label5.Location = new System.Drawing.Point(228, 229);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(194, 13);
+            this.label5.Size = new System.Drawing.Size(182, 13);
             this.label5.TabIndex = 8;
-            this.label5.Text = "Write your delivery address(OPTIONAL)";
+            this.label5.Text = "Write your email address(OPTIONAL)";
             // 
             // txtbxName
             // 
@@ -133,14 +114,14 @@
             this.txtbxName.Size = new System.Drawing.Size(210, 44);
             this.txtbxName.TabIndex = 10;
             // 
-            // txtbxAddress
+            // txtbxEmail
             // 
-            this.txtbxAddress.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtbxAddress.Location = new System.Drawing.Point(378, 35);
-            this.txtbxAddress.Name = "txtbxAddress";
-            this.txtbxAddress.Size = new System.Drawing.Size(210, 44);
-            this.txtbxAddress.TabIndex = 9;
-            this.txtbxAddress.TextChanged += new System.EventHandler(this.txtbxAddress_TextChanged);
+            this.txtbxEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtbxEmail.Location = new System.Drawing.Point(12, 208);
+            this.txtbxEmail.Name = "txtbxEmail";
+            this.txtbxEmail.Size = new System.Drawing.Size(210, 44);
+            this.txtbxEmail.TabIndex = 9;
+            this.txtbxEmail.TextChanged += new System.EventHandler(this.txtbxAddress_TextChanged);
             // 
             // label6
             // 
@@ -191,14 +172,12 @@
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.txtbxName);
-            this.Controls.Add(this.txtbxAddress);
+            this.Controls.Add(this.txtbxEmail);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtbxPhone);
-            this.Controls.Add(this.txtbxEmail);
             this.Controls.Add(this.txtbxPassword);
             this.Controls.Add(this.txtbxUsername);
             this.Name = "Customer_registration";
@@ -214,14 +193,12 @@
         private System.Windows.Forms.TextBox txtbxUsername;
         private System.Windows.Forms.TextBox txtbxPassword;
         private System.Windows.Forms.TextBox txtbxPhone;
-        private System.Windows.Forms.TextBox txtbxEmail;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox txtbxName;
-        private System.Windows.Forms.TextBox txtbxAddress;
+        private System.Windows.Forms.TextBox txtbxEmail;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Button btnCancel;

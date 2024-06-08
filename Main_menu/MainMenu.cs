@@ -32,16 +32,16 @@ namespace Main_menu
         {
             SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["MyCS"].ToString());
             conn.Open();
-            SqlCommand cmd = new SqlCommand("select count(*) from [User] where Username=@u and Password=@p", conn);
+            SqlCommand cmd = new SqlCommand("select count(*) from [tblUser] where account=@u and Password=@p", conn);
             cmd.Parameters.AddWithValue("@u",txtbxLogin.Text);
             cmd.Parameters.AddWithValue("@p",txtbxPassword.Text);
             int count = Convert.ToInt32(cmd.ExecuteScalar());
             if (count > 0)
             {
-                SqlCommand cmd1 = new SqlCommand("Select role from [User] where [Username]=@u and [Password]=@p", conn);
+                SqlCommand cmd1 = new SqlCommand("Select role from [tblUser] where [account]=@u and [Password]=@p", conn);
                 cmd1.Parameters.AddWithValue("@u", txtbxLogin.Text);
                 cmd1.Parameters.AddWithValue("@p", txtbxPassword.Text);
-                SqlCommand cmd2 = new SqlCommand("Select [UserID] from [User] where [Username]=@u and [Password]=@p", conn);
+                SqlCommand cmd2 = new SqlCommand("Select [ID] from [tblUser] where [account]=@u and [Password]=@p", conn);
                 cmd2.Parameters.AddWithValue("@u", txtbxLogin.Text);
                 cmd2.Parameters.AddWithValue("@p", txtbxPassword.Text);
                 string role = cmd1.ExecuteScalar().ToString();

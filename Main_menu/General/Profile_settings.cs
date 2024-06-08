@@ -23,7 +23,6 @@ namespace Main_menu
 
         public void AllButtons(bool a) 
         {
-            btnChangeEmail.Visible = a;
             btnChangePassword.Visible = a;
             btnChangeUsername.Visible = a;
             btnCancel.Visible = a;
@@ -84,5 +83,6 @@ namespace Main_menu
             txtPassword.Text = (null);
             AllButtons(true);
         }
+
     }
 }

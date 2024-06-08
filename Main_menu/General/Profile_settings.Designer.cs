@@ -30,7 +30,6 @@
         {
             this.btnChangePassword = new System.Windows.Forms.Button();
             this.btnChangeUsername = new System.Windows.Forms.Button();
-            this.btnChangeEmail = new System.Windows.Forms.Button();
             this.lblQuestion = new System.Windows.Forms.Label();
             this.btnSave = new System.Windows.Forms.Button();
             this.txtNewInfo = new System.Windows.Forms.TextBox();
@@ -62,15 +61,6 @@
             this.btnChangeUsername.Text = "Username";
             this.btnChangeUsername.UseVisualStyleBackColor = true;
             this.btnChangeUsername.Click += new System.EventHandler(this.btnChangeUsername_Click);
-            // 
-            // btnChangeEmail
-            // 
-            this.btnChangeEmail.Location = new System.Drawing.Point(326, 342);
-            this.btnChangeEmail.Name = "btnChangeEmail";
-            this.btnChangeEmail.Size = new System.Drawing.Size(376, 66);
-            this.btnChangeEmail.TabIndex = 2;
-            this.btnChangeEmail.Text = "Email";
-            this.btnChangeEmail.UseVisualStyleBackColor = true;
             // 
             // lblQuestion
             // 
@@ -150,7 +140,7 @@
             this.btnChangeAddress.Name = "btnChangeAddress";
             this.btnChangeAddress.Size = new System.Drawing.Size(376, 66);
             this.btnChangeAddress.TabIndex = 10;
-            this.btnChangeAddress.Text = "Address";
+            this.btnChangeAddress.Text = "Email";
             this.btnChangeAddress.UseVisualStyleBackColor = true;
             this.btnChangeAddress.Click += new System.EventHandler(this.btnChangeAddress_Click);
             // 
@@ -191,7 +181,6 @@
             this.Controls.Add(this.txtNewInfo);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.lblQuestion);
-            this.Controls.Add(this.btnChangeEmail);
             this.Controls.Add(this.btnChangeUsername);
             this.Controls.Add(this.btnChangePassword);
             this.Name = "Profile_settings";
@@ -205,7 +194,6 @@
 
         private System.Windows.Forms.Button btnChangePassword;
         private System.Windows.Forms.Button btnChangeUsername;
-        private System.Windows.Forms.Button btnChangeEmail;
         private System.Windows.Forms.Label lblQuestion;
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.TextBox txtNewInfo;

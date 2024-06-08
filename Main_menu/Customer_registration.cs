@@ -36,16 +36,14 @@ namespace Main_menu
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            if (txtbxName.Text!="" && txtbxEmail.Text != "" && txtbxPhone.Text != "" && txtbxUsername.Text != "")
+            if (txtbxName.Text!="" && txtbxPassword.Text != "" && txtbxUsername.Text != "")
             {
 
                 using (SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["MyCS"].ToString()))
                 {
                     conn.Open();
-                    SqlCommand cmd = new SqlCommand("select count(*) from [User] where Username=@u or [Email]=@e or [Phone]=@p", conn);
+                    SqlCommand cmd = new SqlCommand("select count(*) from [tblUser] where Account=@u", conn);
                     cmd.Parameters.AddWithValue("@u", txtbxUsername.Text);
-                    cmd.Parameters.AddWithValue("@e", txtbxEmail.Text);
-                    cmd.Parameters.AddWithValue("@p", txtbxPhone.Text);
                     int count = Convert.ToInt32(cmd.ExecuteScalar());
                     if (count > 0)
                     {
@@ -53,19 +51,18 @@ namespace Main_menu
                     }
                     else
                     {
-                        SqlCommand cmd1 = new SqlCommand("select Top 1 [UserID] from [User] order by [UserID] Desc;", conn);
-                        int idcounter = Convert.ToInt32(Convert.ToString(cmd1.ExecuteScalar()).Split('N')[1]);
-                        idcounter += 1;
-                        string idreturn;
-                        if (idcounter >= 10)
+                        SqlCommand cmd1 = new SqlCommand("select Top 1 [ID] from [tblUser] order by [ID] Desc;", conn);
+                        int idcounter;
+                        if (cmd1.ExecuteScalar() != null)
                         {
-                            idreturn = "UN" + $"{idcounter}";
+                            idcounter = Convert.ToInt32(cmd1.ExecuteScalar().ToString()) + 1;
                         }
                         else
                         {
-                            idreturn = "UN" + $"0{idcounter}";
+                            idcounter = 1;
                         }
-                        User.Register(idreturn, txtbxName.Text, txtbxUsername.Text, txtbxPassword.Text, "customer", txtbxEmail.Text, txtbxPhone.Text, txtbxAddress.Text);
+                        string idreturn = idcounter.ToString();
+                        User.Register(idreturn, txtbxName.Text, txtbxUsername.Text, txtbxPassword.Text, "customer", txtbxPhone.Text, txtbxEmail.Text);
                         lblTest.Text = "Registration Done";
                     }
                 }
@@ -88,6 +85,11 @@ namespace Main_menu
         }
 
         private void txtbxUsername_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label4_Click(object sender, EventArgs e)
         {
 
         }
