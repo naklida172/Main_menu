@@ -47,7 +47,7 @@ namespace Main_menu
                 cmd2.Parameters.AddWithValue("@p", txtbxPassword.Text);
                 string role = cmd1.ExecuteScalar().ToString();
                 string id = cmd2.ExecuteScalar().ToString();
-                if (role != "")//change "" to "manager"
+                if (role == "manager")//change "" to "manager"
                 {
                     current_user=User.get_user(id);
                     this.Hide();
@@ -55,9 +55,13 @@ namespace Main_menu
                     Manager obj1 = new Manager();
                     obj1.ShowDialog();
                 }
-                else//put your role here
+                else if (role == "cief")
                 {
-                    //put your form here
+                    current_user = User.get_user(id);
+                    this.Hide();
+                    conn.Close();
+                    frmChefMenu obj1 = new frmChefMenu();
+                    obj1.ShowDialog();
                 }
             }
             else
@@ -80,6 +84,11 @@ namespace Main_menu
         }
 
         private void MainMenu_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtbxPassword_TextChanged(object sender, EventArgs e)
         {
 
         }

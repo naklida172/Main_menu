@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmChefMenu));
             this.btnViewOrders = new System.Windows.Forms.Button();
             this.btnManageInventory = new System.Windows.Forms.Button();
             this.btnUpdateProfile = new System.Windows.Forms.Button();
@@ -38,9 +39,10 @@
             // 
             // btnViewOrders
             // 
-            this.btnViewOrders.Location = new System.Drawing.Point(81, 62);
+            this.btnViewOrders.Location = new System.Drawing.Point(40, 32);
+            this.btnViewOrders.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnViewOrders.Name = "btnViewOrders";
-            this.btnViewOrders.Size = new System.Drawing.Size(225, 98);
+            this.btnViewOrders.Size = new System.Drawing.Size(112, 51);
             this.btnViewOrders.TabIndex = 0;
             this.btnViewOrders.Text = "View Orders";
             this.btnViewOrders.UseVisualStyleBackColor = true;
@@ -48,9 +50,10 @@
             // 
             // btnManageInventory
             // 
-            this.btnManageInventory.Location = new System.Drawing.Point(81, 193);
+            this.btnManageInventory.Location = new System.Drawing.Point(40, 100);
+            this.btnManageInventory.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnManageInventory.Name = "btnManageInventory";
-            this.btnManageInventory.Size = new System.Drawing.Size(225, 98);
+            this.btnManageInventory.Size = new System.Drawing.Size(112, 51);
             this.btnManageInventory.TabIndex = 1;
             this.btnManageInventory.Text = "Manage Inventory";
             this.btnManageInventory.UseVisualStyleBackColor = true;
@@ -58,9 +61,10 @@
             // 
             // btnUpdateProfile
             // 
-            this.btnUpdateProfile.Location = new System.Drawing.Point(81, 324);
+            this.btnUpdateProfile.Location = new System.Drawing.Point(40, 168);
+            this.btnUpdateProfile.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnUpdateProfile.Name = "btnUpdateProfile";
-            this.btnUpdateProfile.Size = new System.Drawing.Size(225, 98);
+            this.btnUpdateProfile.Size = new System.Drawing.Size(112, 51);
             this.btnUpdateProfile.TabIndex = 2;
             this.btnUpdateProfile.Text = "Update Profile";
             this.btnUpdateProfile.UseVisualStyleBackColor = true;
@@ -70,33 +74,37 @@
             // 
             this.labelChef.AutoSize = true;
             this.labelChef.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelChef.Location = new System.Drawing.Point(531, 447);
+            this.labelChef.Location = new System.Drawing.Point(266, 232);
+            this.labelChef.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelChef.Name = "labelChef";
-            this.labelChef.Size = new System.Drawing.Size(113, 51);
+            this.labelChef.Size = new System.Drawing.Size(58, 26);
             this.labelChef.TabIndex = 3;
             this.labelChef.Text = "Chef";
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::Main_menu.Properties.Resources.ChefProfile;
-            this.pictureBox1.Location = new System.Drawing.Point(411, 62);
+            this.pictureBox1.ErrorImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.ErrorImage")));
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(206, 32);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(360, 360);
+            this.pictureBox1.Size = new System.Drawing.Size(180, 187);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 4;
             this.pictureBox1.TabStop = false;
             // 
             // frmChefMenu
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.AppWorkspace;
-            this.ClientSize = new System.Drawing.Size(864, 540);
+            this.ClientSize = new System.Drawing.Size(432, 281);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.labelChef);
             this.Controls.Add(this.btnUpdateProfile);
             this.Controls.Add(this.btnManageInventory);
             this.Controls.Add(this.btnViewOrders);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "frmChefMenu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Chef Menu";

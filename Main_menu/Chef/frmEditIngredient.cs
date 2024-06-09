@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
+using System.Configuration;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -51,7 +52,7 @@ namespace Main_menu.Chef
                 return;
             }
 
-            string conStr = "Data Source=LAPTOP-DGU69VME\\MSSQLSERVER01;Initial Catalog=RestaurantSystem;Integrated Security=True;";
+            string conStr = ConfigurationManager.ConnectionStrings["MyCS"].ToString();
 
             SqlConnection con = new SqlConnection(conStr);
             con.Open();

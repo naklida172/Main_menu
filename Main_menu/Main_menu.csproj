@@ -102,7 +102,6 @@
       <DependentUpon>frmManageInventory.cs</DependentUpon>
     </Compile>
     <Compile Include="GlobalItems.cs" />
-    <Compile Include="Manager.cs">
     <Compile Include="ManagerSpecific\Add_item.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -172,7 +171,6 @@
     <EmbeddedResource Include="Chef\frmUpdate.resx">
       <DependentUpon>frmUpdate.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Manager.resx">
     <Compile Include="General\Reservation_manager.cs" />
     <Compile Include="General\User.cs" />
     <EmbeddedResource Include="ManagerSpecific\Add_item.resx">
@@ -246,6 +244,7 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <DependentUpon>Database1.mdf</DependentUpon>
     </Content>
+    <Content Include="Resources\ChefProfile.png" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

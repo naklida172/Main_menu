@@ -59,5 +59,52 @@ CREATE TABLE [ReservationType] (
     PRIMARY KEY CLUSTERED ([reservationTypeID] ASC)
 );
 
-Insert into [ReservationType]([reservationTypeName]) Values ('type 2');
-Select * from [ReservationType];
+--Insert into [ReservationType]([reservationTypeName]) Values ('type 2');
+--Select * from [ReservationType];
+
+
+--Colin`s tables
+
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[tblIngredient](
+	[IngredientID] [varchar](50) NOT NULL,
+	[Ingredient] [varchar](50) NULL,
+	[Quantity] [int] NOT NULL,
+	[Unit] [varchar](50) NULL,
+	[Brand] [varchar](50) NULL,
+	[Supplier] [varchar](50) NULL,
+	[ItemID] [varchar](50) NOT NULL,
+	[CreatedTime] [datetime] NULL,
+	[Creator] [varchar](50) NULL,
+	[ChangedTime] [datetime] NULL,
+	[Editor] [varchar](50) NULL,
+ CONSTRAINT [PK_tblIngredient] PRIMARY KEY CLUSTERED 
+(
+	[IngredientID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[tblOrder]    Script Date: 6/9/2024 9:32:09 AM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[tblOrder](
+	[OrderId] [varchar](50) NOT NULL,
+	[TableNO] [varchar](50) NOT NULL,
+	[CustomerName] [varchar](50) NOT NULL,
+	[CreatedTime] [datetime] NULL,
+	[OrderStatus] [varchar](50) NULL,
+	[OrderCompletedTime] [datetime] NULL,
+	[CuisineID] [varchar](50) NULL,
+	[CuisineName] [varchar](50) NULL,
+	[CuisineStatus] [varchar](50) NULL,
+ CONSTRAINT [PK_tblOrder] PRIMARY KEY CLUSTERED 
+(
+	[OrderId] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO

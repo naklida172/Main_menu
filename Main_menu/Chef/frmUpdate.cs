@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
+using System.Configuration;
 using System.Drawing;
 using System.Linq;
 using System.Security.Principal;
@@ -26,7 +27,7 @@ namespace Main_menu.Chef
             txtAccount.Text = account;
 
 
-            string conStr = "Data Source=LAPTOP-DGU69VME\\MSSQLSERVER01;Initial Catalog=RestaurantSystem;Integrated Security=True;";
+            string conStr = ConfigurationManager.ConnectionStrings["MyCS"].ToString();
 
             SqlConnection con = new SqlConnection(conStr);
             con.Open();
@@ -119,7 +120,7 @@ namespace Main_menu.Chef
 
             //DATABASE CONNECT STRING
             //string conStr = "Data Source=LAPTOP-DGU69VME;Initial Catalog=RestaurantSystem;Persist Security Info=True;User ID=sa;Password=20183547";
-            string conStr = "Data Source=LAPTOP-DGU69VME\\MSSQLSERVER01;Initial Catalog=RestaurantSystem;Integrated Security=True;";
+            string conStr = ConfigurationManager.ConnectionStrings["MyCS"].ToString();
 
             SqlConnection con = new SqlConnection(conStr);
             con.Open();
