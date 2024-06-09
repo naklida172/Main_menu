@@ -108,3 +108,11 @@ CREATE TABLE [dbo].[tblOrder](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
+
+
+--testing 
+INSERT INTO tblUser (ID, Account, Password, Realname, Address, Phone, Role)
+VALUES
+('2', 'john_doe', 'password123', 'John Doe', '123 Main St', '555-1234', 'Manager'),
+('3', 'jane_smith', 'password456', 'Jane Smith', '456 Elm St', '555-5678', 'Chef'),
+('4', 'admin_user', 'admin_pass', 'Admin User', NULL, NULL, 'Manager');

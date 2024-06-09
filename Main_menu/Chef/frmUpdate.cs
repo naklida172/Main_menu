@@ -23,8 +23,8 @@ namespace Main_menu.Chef
 
         private void Update_Load(object sender, EventArgs e)
         {
-            string account = GlobalItems.CurrentAccount;
-            txtAccount.Text = account;
+            string id = MainMenu.current_user.Id;
+            txtAccount.Text = id;
 
 
             string conStr = ConfigurationManager.ConnectionStrings["MyCS"].ToString();
@@ -33,8 +33,8 @@ namespace Main_menu.Chef
             con.Open();
 
 
-            SqlCommand cmd = new SqlCommand("select * from tbluser where account =@account", con);
-            cmd.Parameters.AddWithValue("@account", account);
+            SqlCommand cmd = new SqlCommand("select * from [tblUser] where [ID] =@i", con);
+            cmd.Parameters.AddWithValue("@i", id);
 
             SqlDataReader rd = cmd.ExecuteReader();
             rd.Read();

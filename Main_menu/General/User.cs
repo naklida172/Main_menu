@@ -27,6 +27,7 @@ namespace Main_menu
                 this.phone = phone;
                 this.address = address;
             }
+        public string Id { get { return this.id;} }
         static public User get_user(string id)
         {
             using (SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["MyCS"].ToString()))
