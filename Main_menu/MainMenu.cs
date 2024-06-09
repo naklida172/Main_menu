@@ -2,9 +2,13 @@
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Configuration;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.ExceptionServices;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -17,101 +21,57 @@ namespace Main_menu
         {
             InitializeComponent();
         }
-        class User
-        {
-            private string username;
-            private string email;
-            private string password;
-            private string role;
-            public User(string username, string email, string password, string role)
-            {
-                this.username = username;
-                this.email = email;
-                this.password = password;
-                this.role = role;
-            }
-
-            public bool Check_password(string password)
-            {
-                if(this.password==password)
-                    return true;
-                else return false;
-            }
-            public bool Check_login(string logindata)
-            {
-                if (logindata == this.email || logindata == this.username) return true;
-                else return false;
-            }
-            public string RolePlay()
-            { return this.role; }
-        }
 
 
-        List<User> Users = new List<User>
-        {
-            new User("john_doe", "john@example.com", "password123", "User"),
-            new User("guest", "guest@example.com", "guestpass", "Guest"),
-            new User("manager123", "manager@example.com", "securepwd", "Manager"),
-            new User("dev_guy", "dev@example.com", "devpassword", "Developer"),
-            new User("support_agent", "support@example.com", "helpme", "Support"),
-            new User("sales_rep", "sales@example.com", "sales123", "Sales"),
-            new User("marketing_guru", "marketing@example.com", "promo123", "Marketing"),
-            new User("cs_agent", "cs@example.com", "customerservice", "Customer Service"),
-            new User("testuser", "test@example.com", "test123", "Test")
-        };
 
+        internal static User current_user = null;
 
 
 
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            GlobalItems.CurrentAccount = "Colin";
-
-            frmChefMenu frm = new frmChefMenu();
-
-            frm.ShowDialog();
-            //try
-            //{
-            //    for (int i = 0; i < Users.Count; i++)
-            //    {
-            //        if (Users[i].Check_login(txtbxLogin.Text))
-            //        {
-            //            if (Users[i].Check_password(txtbxPassword.Text))
-            //            {
-            //                Manager obj1 = new Manager();
-            //                obj1.ShowDialog();
-            //            }
-            //            else
-            //            {
-            //                lblTest.Text = "Wrong password";
-            //            }
-            //        }
-            //    }
-
-            //} catch { lblTest.Text = "Error"; }
-
-            //if (txtbxLogin.Text== "Colin" && txtbxPassword.Text== "888888")
-            //{
-            //    GlobalItems.CurrentAccount = txtbxLogin.Text.Trim();
-
-            //    frmChefMenu frm = new frmChefMenu();
-            //    frm.ShowDialog();
-            //}
-
-            //if (txtbxLogin.Text == "John" && txtbxPassword.Text == "11111111")
-            //{
-            //    GlobalItems.CurrentAccount = txtbxLogin.Text.Trim();
-            //    frmChefMenu frm = new frmChefMenu();
-            //    frm.ShowDialog();
-            //}
-
-            //MessageBox.Show("Username or Password wrong.");
+            SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["MyCS"].ToString());
+            conn.Open();
+            SqlCommand cmd = new SqlCommand("select count(*) from [tblUser] where account=@u and Password=@p", conn);
+            cmd.Parameters.AddWithValue("@u",txtbxLogin.Text);
+            cmd.Parameters.AddWithValue("@p",txtbxPassword.Text);
+            int count = Convert.ToInt32(cmd.ExecuteScalar());
+            if (count > 0)
+            {
+                SqlCommand cmd1 = new SqlCommand("Select role from [tblUser] where [account]=@u and [Password]=@p", conn);
+                cmd1.Parameters.AddWithValue("@u", txtbxLogin.Text);
+                cmd1.Parameters.AddWithValue("@p", txtbxPassword.Text);
+                SqlCommand cmd2 = new SqlCommand("Select [ID] from [tblUser] where [account]=@u and [Password]=@p", conn);
+                cmd2.Parameters.AddWithValue("@u", txtbxLogin.Text);
+                cmd2.Parameters.AddWithValue("@p", txtbxPassword.Text);
+                string role = cmd1.ExecuteScalar().ToString();
+                string id = cmd2.ExecuteScalar().ToString();
+                if (role != "")//change "" to "manager"
+                {
+                    current_user=User.get_user(id);
+                    this.Hide();
+                    conn.Close();
+                    Manager obj1 = new Manager();
+                    obj1.ShowDialog();
+                }
+                else//put your role here
+                {
+                    //put your form here
+                }
+            }
+            else
+            {
+                lblTest.Text = "Incorrect Password or Login";
+            }
         }
 
-        private void btnRegister_Click(object sender, EventArgs e)
+            private void btnRegister_Click(object sender, EventArgs e)
         {
-
+            this.Hide();
+            Customer_registration obj1 = new Customer_registration();
+            obj1.ShowDialog();
+            this.Visible = true;
         }
 
         private void lblTest_Click(object sender, EventArgs e)
@@ -119,7 +79,7 @@ namespace Main_menu
 
         }
 
-        private void label1_Click(object sender, EventArgs e)
+        private void MainMenu_Load(object sender, EventArgs e)
         {
 
         }

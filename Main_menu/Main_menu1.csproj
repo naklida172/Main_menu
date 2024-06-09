@@ -51,9 +51,6 @@
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Data.SqlClient, Version=4.6.1.6, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <HintPath>..\packages\System.Data.SqlClient.4.8.6\lib\net461\System.Data.SqlClient.dll</HintPath>
-    </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -65,78 +62,43 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Chef\frmAddIngredient.cs">
+    <Compile Include="Add_item.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Chef\frmAddIngredient.Designer.cs">
-      <DependentUpon>frmAddIngredient.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Chef\frmEditIngredient.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Chef\frmEditIngredient.Designer.cs">
-      <DependentUpon>frmEditIngredient.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Chef\frmUpdate.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Chef\frmUpdate.Designer.cs">
-      <DependentUpon>frmUpdate.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Chef\frmChefMenu.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Chef\frmChefMenu.Designer.cs">
-      <DependentUpon>frmChefMenu.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Chef\frmViewOrders.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Chef\frmViewOrders.Designer.cs">
-      <DependentUpon>frmViewOrders.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Chef\frmManageInventory.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Chef\frmManageInventory.Designer.cs">
-      <DependentUpon>frmManageInventory.cs</DependentUpon>
-    </Compile>
-    <Compile Include="GlobalItems.cs" />
-    <Compile Include="Manager.cs">
-    <Compile Include="ManagerSpecific\Add_item.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ManagerSpecific\Add_item.Designer.cs">
+    <Compile Include="Add_item.Designer.cs">
       <DependentUpon>Add_item.cs</DependentUpon>
     </Compile>
-    <Compile Include="ManagerSpecific\Add_reservation.cs">
+    <Compile Include="Add_reservation.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ManagerSpecific\Add_reservation.Designer.cs">
+    <Compile Include="Add_reservation.Designer.cs">
       <DependentUpon>Add_reservation.cs</DependentUpon>
     </Compile>
+    <Compile Include="Edit_items.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Edit_items.Designer.cs">
+      <DependentUpon>Edit_items.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reservation.cs" />
+    <Compile Include="Menu_item.cs" />
+    <Compile Include="User.cs" />
     <Compile Include="Customer_registration.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Customer_registration.Designer.cs">
       <DependentUpon>Customer_registration.cs</DependentUpon>
     </Compile>
-    <Compile Include="ManagerSpecific\Edit_items.cs">
+    <Compile Include="Profile_settings.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ManagerSpecific\Edit_items.Designer.cs">
-      <DependentUpon>Edit_items.cs</DependentUpon>
+    <Compile Include="Profile_settings.Designer.cs">
+      <DependentUpon>Profile_settings.cs</DependentUpon>
     </Compile>
-    <Compile Include="ManagerSpecific\Edit_reservation.cs">
+    <Compile Include="Manager.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ManagerSpecific\Edit_reservation.Designer.cs">
-      <DependentUpon>Edit_reservation.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ManagerSpecific\Manager.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ManagerSpecific\Manager.Designer.cs">
+    <Compile Include="Manager.Designer.cs">
       <DependentUpon>Manager.cs</DependentUpon>
     </Compile>
     <Compile Include="MainMenu.cs">
@@ -145,75 +107,42 @@
     <Compile Include="MainMenu.Designer.cs">
       <DependentUpon>MainMenu.cs</DependentUpon>
     </Compile>
-    <Compile Include="General\Menu_item.cs" />
-    <Compile Include="General\Profile_settings.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="General\Profile_settings.Designer.cs">
-      <DependentUpon>Profile_settings.cs</DependentUpon>
-    </Compile>
-    <Compile Include="General\Program.cs" />
+    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Chef\frmAddIngredient.resx">
-      <DependentUpon>frmAddIngredient.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Chef\frmChefMenu.resx">
-      <DependentUpon>frmChefMenu.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Chef\frmEditIngredient.resx">
-      <DependentUpon>frmEditIngredient.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Chef\frmViewOrders.resx">
-      <DependentUpon>frmViewOrders.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Chef\frmManageInventory.resx">
-      <DependentUpon>frmManageInventory.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Chef\frmUpdate.resx">
-      <DependentUpon>frmUpdate.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Manager.resx">
-    <Compile Include="General\Reservation_manager.cs" />
-    <Compile Include="General\User.cs" />
-    <EmbeddedResource Include="ManagerSpecific\Add_item.resx">
+    <EmbeddedResource Include="Add_item.resx">
       <DependentUpon>Add_item.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ManagerSpecific\Add_reservation.resx">
+    <EmbeddedResource Include="Add_reservation.resx">
       <DependentUpon>Add_reservation.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Customer_registration.resx">
       <DependentUpon>Customer_registration.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ManagerSpecific\Edit_items.resx">
+    <EmbeddedResource Include="Edit_items.resx">
       <DependentUpon>Edit_items.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ManagerSpecific\Edit_reservation.resx">
-      <DependentUpon>Edit_reservation.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ManagerSpecific\Manager.resx">
+    <EmbeddedResource Include="Manager.resx">
       <DependentUpon>Manager.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainMenu.resx">
       <DependentUpon>MainMenu.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="General\Profile_settings.resx">
+    <EmbeddedResource Include="Profile_settings.resx">
       <DependentUpon>Profile_settings.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <DesignTime>True</DesignTime>
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
@@ -236,17 +165,13 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\LOGO.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Database1.mdf">
+    <Content Include="MainDB.mdf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Database1_log.ldf">
+    <Content Include="MainDB_log.ldf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      <DependentUpon>Database1.mdf</DependentUpon>
+      <DependentUpon>MainDB.mdf</DependentUpon>
     </Content>
   </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
