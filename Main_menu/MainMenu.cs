@@ -55,7 +55,7 @@ namespace Main_menu
                     Manager obj1 = new Manager();
                     obj1.ShowDialog();
                 }
-                else if (role == "cief")
+                else if (role == "chef")
                 {
                     current_user = User.get_user(id);
                     this.Hide();
