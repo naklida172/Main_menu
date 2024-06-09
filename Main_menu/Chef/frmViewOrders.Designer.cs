@@ -52,7 +52,7 @@
             // 
             this.btnSearchUnFinished.BackColor = System.Drawing.Color.Red;
             this.btnSearchUnFinished.Location = new System.Drawing.Point(1016, 80);
-            this.btnSearchUnFinished.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnSearchUnFinished.Margin = new System.Windows.Forms.Padding(4);
             this.btnSearchUnFinished.Name = "btnSearchUnFinished";
             this.btnSearchUnFinished.Size = new System.Drawing.Size(170, 76);
             this.btnSearchUnFinished.TabIndex = 0;
@@ -64,7 +64,7 @@
             // 
             this.btnSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.btnSearch.Location = new System.Drawing.Point(622, 96);
-            this.btnSearch.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnSearch.Margin = new System.Windows.Forms.Padding(4);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(100, 48);
             this.btnSearch.TabIndex = 1;
@@ -76,7 +76,7 @@
             // 
             this.btnMarkedInProgress.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.btnMarkedInProgress.Location = new System.Drawing.Point(1230, 74);
-            this.btnMarkedInProgress.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnMarkedInProgress.Margin = new System.Windows.Forms.Padding(4);
             this.btnMarkedInProgress.Name = "btnMarkedInProgress";
             this.btnMarkedInProgress.Size = new System.Drawing.Size(184, 90);
             this.btnMarkedInProgress.TabIndex = 2;
@@ -88,7 +88,7 @@
             // 
             this.btnMarkCompleted.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.btnMarkCompleted.Location = new System.Drawing.Point(1448, 74);
-            this.btnMarkCompleted.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnMarkCompleted.Margin = new System.Windows.Forms.Padding(4);
             this.btnMarkCompleted.Name = "btnMarkCompleted";
             this.btnMarkCompleted.Size = new System.Drawing.Size(188, 90);
             this.btnMarkCompleted.TabIndex = 3;
@@ -100,7 +100,7 @@
             // 
             this.btnClear.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.btnClear.Location = new System.Drawing.Point(744, 98);
-            this.btnClear.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnClear.Margin = new System.Windows.Forms.Padding(4);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(100, 44);
             this.btnClear.TabIndex = 4;
@@ -151,7 +151,7 @@
             // txtOrderId
             // 
             this.txtOrderId.Location = new System.Drawing.Point(146, 36);
-            this.txtOrderId.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtOrderId.Margin = new System.Windows.Forms.Padding(4);
             this.txtOrderId.Name = "txtOrderId";
             this.txtOrderId.Size = new System.Drawing.Size(100, 31);
             this.txtOrderId.TabIndex = 9;
@@ -159,7 +159,7 @@
             // txtTableNo
             // 
             this.txtTableNo.Location = new System.Drawing.Point(146, 104);
-            this.txtTableNo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtTableNo.Margin = new System.Windows.Forms.Padding(4);
             this.txtTableNo.Name = "txtTableNo";
             this.txtTableNo.Size = new System.Drawing.Size(100, 31);
             this.txtTableNo.TabIndex = 10;
@@ -177,7 +177,7 @@
             // txtCustomerName
             // 
             this.txtCustomerName.Location = new System.Drawing.Point(458, 104);
-            this.txtCustomerName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtCustomerName.Margin = new System.Windows.Forms.Padding(4);
             this.txtCustomerName.Name = "txtCustomerName";
             this.txtCustomerName.Size = new System.Drawing.Size(100, 31);
             this.txtCustomerName.TabIndex = 14;
@@ -187,7 +187,7 @@
             this.dgvOrders.AllowUserToAddRows = false;
             this.dgvOrders.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvOrders.Location = new System.Drawing.Point(30, 216);
-            this.dgvOrders.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dgvOrders.Margin = new System.Windows.Forms.Padding(4);
             this.dgvOrders.Name = "dgvOrders";
             this.dgvOrders.ReadOnly = true;
             this.dgvOrders.RowHeadersWidth = 82;
@@ -200,7 +200,7 @@
             // 
             this.btnShowAll.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.btnShowAll.Location = new System.Drawing.Point(868, 96);
-            this.btnShowAll.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnShowAll.Margin = new System.Windows.Forms.Padding(4);
             this.btnShowAll.Name = "btnShowAll";
             this.btnShowAll.Size = new System.Drawing.Size(114, 48);
             this.btnShowAll.TabIndex = 16;
@@ -213,7 +213,7 @@
             this.dtpCreatedTimeStart.CustomFormat = "yyyy-MM-dd HH:mm:ss";
             this.dtpCreatedTimeStart.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpCreatedTimeStart.Location = new System.Drawing.Point(402, 36);
-            this.dtpCreatedTimeStart.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dtpCreatedTimeStart.Margin = new System.Windows.Forms.Padding(4);
             this.dtpCreatedTimeStart.Name = "dtpCreatedTimeStart";
             this.dtpCreatedTimeStart.Size = new System.Drawing.Size(280, 31);
             this.dtpCreatedTimeStart.TabIndex = 17;
@@ -223,7 +223,7 @@
             this.dateTimePicker1.CustomFormat = "yyyy-MM-dd HH:mm:ss";
             this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dateTimePicker1.Location = new System.Drawing.Point(720, 32);
-            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(4);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(280, 31);
             this.dateTimePicker1.TabIndex = 18;
@@ -251,7 +251,7 @@
             this.Controls.Add(this.btnMarkedInProgress);
             this.Controls.Add(this.btnSearch);
             this.Controls.Add(this.btnSearchUnFinished);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmViewOrders";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmViewOrders";
