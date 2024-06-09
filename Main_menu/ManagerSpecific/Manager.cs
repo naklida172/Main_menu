@@ -16,7 +16,6 @@ namespace Main_menu
     {
         public string current_mode = "Main";
         static public bool Delete_item = false;
-        static public bool Delete_reservation = false;
 
         public void Management_mode()
         {
@@ -35,10 +34,11 @@ namespace Main_menu
         }
         public void Reservation_view()
         {
+            btnBack.Text = "Go back";
             pictureBox1.Visible = false;
             lblSortBy.Visible = true;
             btnMngMItms.Visible = false;
-            btnMngRsrvs.Text = "Month";
+            btnMngRsrvs.Text = "Date";
             btnViewRsrvRprt.Text = "Customer";
             btnUpdtPrfl.Text = "Type";
             current_mode = "View";
@@ -67,10 +67,6 @@ namespace Main_menu
                 Management_mode();
                 current_mode = "Items";
             }
-            else if (current_mode == "View")
-            {
-
-            }
         }
 
         private void btnMngRsrvs_Click(object sender, EventArgs e)
@@ -82,7 +78,9 @@ namespace Main_menu
             }
             else if (current_mode == "View")
             {
-
+                lstbxView.DataSource = Reservation_manager.Get_IdName("Date");
+                lstbxView.Visible = true;
+                
             }
         }
 
@@ -94,7 +92,8 @@ namespace Main_menu
             }
             else if (current_mode == "View")
             {
-
+                lstbxView.DataSource = Reservation_manager.Get_IdName("customerID");
+                lstbxView.Visible = true;
             }
         }
 
@@ -107,7 +106,8 @@ namespace Main_menu
             }
             else if (current_mode == "View")
             {
-
+                lstbxView.DataSource = Reservation_manager.Get_IdName("reservationTypeID");
+                lstbxView.Visible = true;
             }
         }
 
@@ -146,13 +146,13 @@ namespace Main_menu
                 button1.Visible = false;
                 button2.Visible = false;
                 button3.Visible = false;
-                button4.Visible = false;
                 btnMngMItms.Text = "Manage menu items";
                 btnMngRsrvs.Text = "Manage reservations";
                 btnViewRsrvRprt.Text = "View reservation report";
                 btnUpdtPrfl.Text = "Update profile";
                 pictureBox1.Visible = true;
                 lblSortBy.Visible = false;
+                lstbxView.Visible = false;
                 current_mode = "Main";
             }
         }
@@ -172,22 +172,19 @@ namespace Main_menu
         }
         private void button3_Click(object sender, EventArgs e)
         {
+            Delete_item = true;
             if (current_mode == "Items")
             {
-                Delete_item = true;
                 Edit_items obj1 = new Edit_items();
                 obj1.ShowDialog();
             }
             else if (current_mode == "Reservations")
             {
-                Add_reservation obj1 = new Add_reservation();
+                Edit_reservation obj1 = new Edit_reservation();
                 obj1.ShowDialog();
             }
         }
 
-        private void button4_Click(object sender, EventArgs e)
-        {
 
-        }
     }
 }

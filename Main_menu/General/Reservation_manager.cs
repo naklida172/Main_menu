@@ -68,18 +68,37 @@ namespace Main_menu
                 */
             }
         }
-        static public List<string> Get_IdName()
+        static public List<string> Get_IdName(string sort="")
         {
             using (SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["MyCS"].ToString()))
             {
                 List<string> Items_List = new List<string>();
                 conn.Open();
-                string command = "Select [reservationId], [Realname], [date]  from [Reservation] Inner join [tblUser] on [Reservation].[customerID]=[tblUser].[ID]";
-                SqlCommand cmd = new SqlCommand(command, conn);
-                SqlDataReader read = cmd.ExecuteReader();
-                while(read.Read())
+                if (sort == "")
                 {
-                    Items_List.Add(read.GetInt32(0).ToString()+","+read.GetString(1)+","+read.GetString(2));
+                    string command = "Select [reservationId], [Realname], [date]  from [Reservation] Inner join [tblUser] on [Reservation].[customerID]=[tblUser].[ID]";
+                    SqlCommand cmd = new SqlCommand(command, conn);
+                    SqlDataReader read = cmd.ExecuteReader();
+                    while (read.Read())
+                    {
+                        Items_List.Add(read.GetInt32(0).ToString() + "," + read.GetString(1) + "," + read.GetString(2));
+                    }
+                }
+                else
+                {
+                    string singleRsrv= string.Empty;
+                    string command = "Select *  from [Reservation]"+"Order by "+sort;
+                    SqlCommand cmd = new SqlCommand(command, conn);
+                    SqlDataReader read = cmd.ExecuteReader();
+                    while (read.Read())
+                    {
+                        for(int i=0; i< read.FieldCount; i++)
+                        {
+                            singleRsrv+=read.GetValue(i).ToString();
+                            if(i!= read.FieldCount - 1) {  singleRsrv+=", "; }
+                        }
+                        Items_List.Add(singleRsrv);
+                    }
                 }
                 return Items_List;
             }
@@ -128,8 +147,24 @@ namespace Main_menu
                 SqlCommand cmd3 = new SqlCommand("Select [reservationTypeID] from [ReservationType] where [reservationTypeName] = @n", conn);
                 cmd3.Parameters.AddWithValue("@n", type);
                 int typeID = Convert.ToInt32(cmd3.ExecuteScalar());
-                Console.WriteLine(typeID);
-                //cmd4.ExecuteNonQuery();
+                Console.WriteLine(type);
+                SqlCommand cmd4 = new SqlCommand("Update Reservation Set [reservationTypeID]=@t where [reservationId] = @i", conn);
+                cmd4.Parameters.AddWithValue("@t", typeID);
+                cmd4.Parameters.AddWithValue("@i", reservationID);
+                cmd4.ExecuteNonQuery();
+            }
+        }
+
+        static public void Delete_item(string id)
+        {
+            using (SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["MyCS"].ToString()))
+            {
+                conn.Open();
+                using (SqlCommand cmd = new SqlCommand("DELETE FROM [Reservation] WHERE [reservationId]=@i", conn))
+                {
+                    cmd.Parameters.AddWithValue("@i", id);
+                    cmd.ExecuteNonQuery();
+                }
             }
         }
     }

@@ -61,7 +61,7 @@ namespace Main_menu
                 Edit = int.Parse(txtbxID.Text);
                 Menu_item.Delete_item(Edit);
                 Edit = 0;
-                lstbxItems.DataSource = Food_item.Get_IdName();
+                lstbxItems.DataSource = Reservation_manager.Get_IdName();
             }
 
         }

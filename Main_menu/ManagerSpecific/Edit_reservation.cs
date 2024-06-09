@@ -45,7 +45,7 @@ namespace Main_menu.ManagerSpecific
             {
                 lblSelect.Text = "No such id found";
             }
-            else if (Manager.Delete_reservation == false)
+            else if (Manager.Delete_item == false)
             {
                 this.Hide();
                 Edit = txtbxID.Text;
@@ -55,6 +55,11 @@ namespace Main_menu.ManagerSpecific
             }
             else
             {
+                Edit = txtbxID.Text;
+                Reservation_manager.Delete_item(Edit);
+                Edit = "";
+                lstbxItems.DataSource = Reservation_manager.Get_IdName();
+                lblSelect.Text = "Done";
             }
         }
 
