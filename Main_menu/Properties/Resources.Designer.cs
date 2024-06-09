@@ -59,15 +59,5 @@ namespace Main_menu.Properties {
                 resourceCulture = value;
             }
         }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap work_icon_11 {
-            get {
-                object obj = ResourceManager.GetObject("work-icon-11", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
     }
 }
