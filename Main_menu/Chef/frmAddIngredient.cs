@@ -18,75 +18,7 @@ namespace Main_menu.Chef
             InitializeComponent();
         }
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
 
-        }
-
-        private void label11_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label10_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label9_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label8_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label7_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label6_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label5_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label4_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label12_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox2_TextChanged(object sender, EventArgs e)
-        {
-
-        }
 
         private void btnConfirm_Click(object sender, EventArgs e)
         {
@@ -126,19 +58,11 @@ namespace Main_menu.Chef
                 return;
             }
 
-            if (string.IsNullOrWhiteSpace(txtCuisineID.Text))
+            if (string.IsNullOrWhiteSpace(txtItemID.Text))
             {
-                MessageBox.Show("Please enter Cuisine ID");
+                MessageBox.Show("Please enter Cuisine Item ID");
                 return;
             }
-
-            if (string.IsNullOrWhiteSpace(txtCuisineName.Text))
-            {
-                MessageBox.Show("Please enter Cuisine Name");
-                return;
-            }
-
-
 
 
             string conStr = "Data Source=LAPTOP-DGU69VME\\MSSQLSERVER01;Initial Catalog=RestaurantSystem;Integrated Security=True;";
@@ -147,7 +71,7 @@ namespace Main_menu.Chef
             con.Open();
 
 
-            SqlCommand cmd = new SqlCommand("INSERT INTO tblIngredient (ingredientID, ingredient, quantity, unit ,cuisineID,createdTime,brand,supplier,cuisineName,creator) VALUES (@ingredientID, @ingredientName, @ingredientQuantity, @ingredientUnit, @cuisineID, @createdTime, @brand, @supplier,@cuisineName,@creator)", con);
+            SqlCommand cmd = new SqlCommand("INSERT INTO tblIngredient (ingredientID, ingredient, quantity, unit ,itemID,createdTime,brand,supplier,creator) VALUES (@ingredientID, @ingredientName, @ingredientQuantity, @ingredientUnit, @itemID, @createdTime, @brand, @supplier,@creator)", con);
 
             string ingredientID = txtIngredientID.Text;
             cmd.Parameters.AddWithValue("@ingredientID", ingredientID);
@@ -170,11 +94,8 @@ namespace Main_menu.Chef
             string supplier = txtSupplier.Text;
             cmd.Parameters.AddWithValue("@supplier", supplier);
 
-            string cuisineID = txtCuisineID.Text;
-            cmd.Parameters.AddWithValue("@cuisineID", cuisineID);
-
-            string cuisineName = txtCuisineName.Text;
-            cmd.Parameters.AddWithValue("@cuisineName", cuisineName);
+            string itemID = txtItemID.Text;
+            cmd.Parameters.AddWithValue("@itemID", itemID);
 
             string creator = txtCreator.Text;
             cmd.Parameters.AddWithValue("@creator", creator);
@@ -186,9 +107,6 @@ namespace Main_menu.Chef
                 MessageBox.Show("Adding Success");
 
                 this.Close();
-
-
-
             }
             else
             {

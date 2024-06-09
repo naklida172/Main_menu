@@ -18,10 +18,6 @@ namespace Main_menu.Chef
             InitializeComponent();
         }
 
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
@@ -39,13 +35,11 @@ namespace Main_menu.Chef
             con.Open();
 
 
-            SqlCommand cmd = new SqlCommand("select * from tblIngredient where cuisineID=@cuisineID or cuisineName=@cuisineName", con);
+            SqlCommand cmd = new SqlCommand("select * from tblIngredient where itemID=@itemID", con);
 
-            string cuisineID = txtCuisineID.Text;
-            cmd.Parameters.AddWithValue("@cuisineID", cuisineID);
+            string itemID = txtItemID.Text;
+            cmd.Parameters.AddWithValue("@itemID", itemID);
 
-            string cuisineName = txtCuisineName.Text;
-            cmd.Parameters.AddWithValue("@cuisineName", cuisineName);
 
             SqlDataReader reader = cmd.ExecuteReader();
 
@@ -71,7 +65,7 @@ namespace Main_menu.Chef
             }
 
             string ingredientId = dgvInventory.SelectedRows[0].Cells["ingredientId"].Value.ToString();
-            string cuisineId = dgvInventory.SelectedRows[0].Cells["cuisineId"].Value.ToString();
+            string itemId = dgvInventory.SelectedRows[0].Cells["itemId"].Value.ToString();
 
             string conStr = "Data Source=LAPTOP-DGU69VME\\MSSQLSERVER01;Initial Catalog=RestaurantSystem;Integrated Security=True;";
 
@@ -79,10 +73,10 @@ namespace Main_menu.Chef
             con.Open();
 
 
-            SqlCommand cmd = new SqlCommand("delete from tblIngredient where ingredientId=@ingredientId and cuisineId=@cuisineId", con);
+            SqlCommand cmd = new SqlCommand("delete from tblIngredient where ingredientId=@ingredientId and itemId=@itemId", con);
 
             cmd.Parameters.AddWithValue("@ingredientId", ingredientId);
-            cmd.Parameters.AddWithValue("@cuisineId", cuisineId);
+            cmd.Parameters.AddWithValue("@itemId", itemId);
 
             int i = cmd.ExecuteNonQuery();
 
@@ -136,8 +130,7 @@ namespace Main_menu.Chef
             frm.unit = dgvInventory.SelectedRows[0].Cells["unit"].Value.ToString();
             frm.brand = dgvInventory.SelectedRows[0].Cells["brand"].Value.ToString();
             frm.supplier = dgvInventory.SelectedRows[0].Cells["supplier"].Value.ToString();
-            frm.cuisineID = dgvInventory.SelectedRows[0].Cells["cuisineID"].Value.ToString();
-            frm.cuisineName = dgvInventory.SelectedRows[0].Cells["cuisineName"].Value.ToString();
+            frm.itemID = dgvInventory.SelectedRows[0].Cells["itemID"].Value.ToString();
             frm.createdTime = dgvInventory.SelectedRows[0].Cells["createdTime"].Value.ToString();
             frm.creator = dgvInventory.SelectedRows[0].Cells["creator"].Value.ToString();
           
@@ -146,5 +139,7 @@ namespace Main_menu.Chef
 
             btnShowAll_Click(null, null);    
         }
+
+
     }
 }

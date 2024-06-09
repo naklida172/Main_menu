@@ -33,8 +33,7 @@
             this.txtEditor = new System.Windows.Forms.TextBox();
             this.txtCreator = new System.Windows.Forms.TextBox();
             this.txtCreatedTime = new System.Windows.Forms.TextBox();
-            this.txtCuisineName = new System.Windows.Forms.TextBox();
-            this.txtCuisineID = new System.Windows.Forms.TextBox();
+            this.txtItemID = new System.Windows.Forms.TextBox();
             this.txtSupplier = new System.Windows.Forms.TextBox();
             this.txtIngredient = new System.Windows.Forms.TextBox();
             this.txtQuantity = new System.Windows.Forms.TextBox();
@@ -43,7 +42,6 @@
             this.label12 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -56,7 +54,7 @@
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(368, 679);
+            this.btnCancel.Location = new System.Drawing.Point(368, 561);
             this.btnCancel.Margin = new System.Windows.Forms.Padding(6);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(150, 44);
@@ -67,7 +65,7 @@
             // 
             // btnConfirm
             // 
-            this.btnConfirm.Location = new System.Drawing.Point(156, 679);
+            this.btnConfirm.Location = new System.Drawing.Point(156, 561);
             this.btnConfirm.Margin = new System.Windows.Forms.Padding(6);
             this.btnConfirm.Name = "btnConfirm";
             this.btnConfirm.Size = new System.Drawing.Size(150, 44);
@@ -78,7 +76,7 @@
             // 
             // txtEditor
             // 
-            this.txtEditor.Location = new System.Drawing.Point(222, 548);
+            this.txtEditor.Location = new System.Drawing.Point(222, 495);
             this.txtEditor.Margin = new System.Windows.Forms.Padding(6);
             this.txtEditor.Name = "txtEditor";
             this.txtEditor.ReadOnly = true;
@@ -87,7 +85,7 @@
             // 
             // txtCreator
             // 
-            this.txtCreator.Location = new System.Drawing.Point(222, 502);
+            this.txtCreator.Location = new System.Drawing.Point(222, 449);
             this.txtCreator.Margin = new System.Windows.Forms.Padding(6);
             this.txtCreator.Name = "txtCreator";
             this.txtCreator.ReadOnly = true;
@@ -96,30 +94,21 @@
             // 
             // txtCreatedTime
             // 
-            this.txtCreatedTime.Location = new System.Drawing.Point(222, 452);
+            this.txtCreatedTime.Location = new System.Drawing.Point(222, 399);
             this.txtCreatedTime.Margin = new System.Windows.Forms.Padding(6);
             this.txtCreatedTime.Name = "txtCreatedTime";
             this.txtCreatedTime.ReadOnly = true;
             this.txtCreatedTime.Size = new System.Drawing.Size(292, 31);
             this.txtCreatedTime.TabIndex = 46;
             // 
-            // txtCuisineName
+            // txtItemID
             // 
-            this.txtCuisineName.Location = new System.Drawing.Point(222, 402);
-            this.txtCuisineName.Margin = new System.Windows.Forms.Padding(6);
-            this.txtCuisineName.Name = "txtCuisineName";
-            this.txtCuisineName.ReadOnly = true;
-            this.txtCuisineName.Size = new System.Drawing.Size(292, 31);
-            this.txtCuisineName.TabIndex = 45;
-            // 
-            // txtCuisineID
-            // 
-            this.txtCuisineID.Location = new System.Drawing.Point(222, 352);
-            this.txtCuisineID.Margin = new System.Windows.Forms.Padding(6);
-            this.txtCuisineID.Name = "txtCuisineID";
-            this.txtCuisineID.ReadOnly = true;
-            this.txtCuisineID.Size = new System.Drawing.Size(292, 31);
-            this.txtCuisineID.TabIndex = 44;
+            this.txtItemID.Location = new System.Drawing.Point(222, 352);
+            this.txtItemID.Margin = new System.Windows.Forms.Padding(6);
+            this.txtItemID.Name = "txtItemID";
+            this.txtItemID.ReadOnly = true;
+            this.txtItemID.Size = new System.Drawing.Size(292, 31);
+            this.txtItemID.TabIndex = 44;
             // 
             // txtSupplier
             // 
@@ -164,7 +153,7 @@
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(134, 548);
+            this.label12.Location = new System.Drawing.Point(134, 495);
             this.label12.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(74, 25);
@@ -174,7 +163,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(120, 502);
+            this.label10.Location = new System.Drawing.Point(120, 449);
             this.label10.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(89, 25);
@@ -184,32 +173,22 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(62, 452);
+            this.label9.Location = new System.Drawing.Point(62, 399);
             this.label9.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(147, 25);
             this.label9.TabIndex = 35;
             this.label9.Text = "Created Time:";
             // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(58, 402);
-            this.label8.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(152, 25);
-            this.label8.TabIndex = 34;
-            this.label8.Text = "Cuisine Name:";
-            // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(92, 352);
+            this.label7.Location = new System.Drawing.Point(47, 352);
             this.label7.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(116, 25);
+            this.label7.Size = new System.Drawing.Size(162, 25);
             this.label7.TabIndex = 33;
-            this.label7.Text = "Cuisine ID:";
+            this.label7.Text = "Cuisine Item ID:";
             // 
             // label6
             // 
@@ -290,8 +269,7 @@
             this.Controls.Add(this.txtEditor);
             this.Controls.Add(this.txtCreator);
             this.Controls.Add(this.txtCreatedTime);
-            this.Controls.Add(this.txtCuisineName);
-            this.Controls.Add(this.txtCuisineID);
+            this.Controls.Add(this.txtItemID);
             this.Controls.Add(this.txtSupplier);
             this.Controls.Add(this.txtIngredient);
             this.Controls.Add(this.txtQuantity);
@@ -300,7 +278,6 @@
             this.Controls.Add(this.label12);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.label9);
-            this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
@@ -326,8 +303,7 @@
         private System.Windows.Forms.TextBox txtEditor;
         private System.Windows.Forms.TextBox txtCreator;
         private System.Windows.Forms.TextBox txtCreatedTime;
-        private System.Windows.Forms.TextBox txtCuisineName;
-        private System.Windows.Forms.TextBox txtCuisineID;
+        private System.Windows.Forms.TextBox txtItemID;
         private System.Windows.Forms.TextBox txtSupplier;
         private System.Windows.Forms.TextBox txtIngredient;
         private System.Windows.Forms.TextBox txtQuantity;
@@ -336,7 +312,6 @@
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;

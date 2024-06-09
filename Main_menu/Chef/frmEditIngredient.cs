@@ -19,8 +19,7 @@ namespace Main_menu.Chef
         public string unit;
         public string brand;
         public string supplier;
-        public string cuisineID;
-        public string cuisineName;
+        public string itemID;
         public string createdTime;
         public string creator;
         public string changedtime;
@@ -57,7 +56,7 @@ namespace Main_menu.Chef
             SqlConnection con = new SqlConnection(conStr);
             con.Open();
 
-            SqlCommand cmd = new SqlCommand("update tblIngredient set ingredientID =@ingredientID, ingredient =@ingredientName, quantity=@quantity, unit= @unit, brand = @brand, supplier=@supplier, cuisineID=@cuisineID, cuisineName=@cuisineName, createdTime=@createdTime, creator=@creator, changedTime=@changedTime, Editor=@Editor where ingredientID =@ingredientID and cuisineId =@cuisineId", con);
+            SqlCommand cmd = new SqlCommand("update tblIngredient set ingredient =@ingredientName, quantity=@quantity, unit= @unit, brand = @brand, supplier=@supplier, changedTime=@changedTime, Editor=@Editor where ingredientID =@ingredientID and itemId =@itemId", con);
 
             string ingredientID = txtIngredientID.Text;
             cmd.Parameters.AddWithValue("@ingredientID", ingredientID);
@@ -77,17 +76,8 @@ namespace Main_menu.Chef
             string supplier = txtSupplier.Text;
             cmd.Parameters.AddWithValue("@supplier", supplier);
 
-            string cuisineID = txtCuisineID.Text;
-            cmd.Parameters.AddWithValue("@cuisineID", cuisineID);
-
-            string cuisineName = txtCuisineName.Text;
-            cmd.Parameters.AddWithValue("@cuisineName", cuisineName);
-
-            string createdTime = txtCreatedTime.Text;
-            cmd.Parameters.AddWithValue("@createdTime", createdTime);
-
-            string creator = txtCreator.Text;
-            cmd.Parameters.AddWithValue("@creator", creator);
+            string itemID = txtItemID.Text;
+            cmd.Parameters.AddWithValue("@itemID", itemID);
 
             string changedtime = DateTime.Now.ToString();
             cmd.Parameters.AddWithValue("@changedTime", changedtime);
@@ -117,12 +107,10 @@ namespace Main_menu.Chef
             txtUnit.Text = unit;
             txtBrand.Text = brand;
             txtSupplier.Text = supplier;
-            txtCuisineID.Text = cuisineID;
-            txtCuisineName.Text = cuisineName;
+            txtItemID.Text = itemID;
             txtCreatedTime.Text = createdTime;
             txtCreator.Text = creator;  
             txtEditor.Text = GlobalItems.CurrentAccount;
-
         }
 
 
